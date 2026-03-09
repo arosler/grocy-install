@@ -8,7 +8,7 @@ add-apt-repository -y ppa:ondrej/php
 # Update
 apt-get update && apt-get -y upgrade
 # Install everything we'll need for Grocy, the webserver & HTTPS
-apt-get install -y nginx sqlite3 php8.3-fpm php8.3-sqlite3 php8.3-gd php8.3-mbstring php8.3-intl unzip certbot python3-certbot-nginx
+apt-get install -y nginx sqlite3 php8.5-fpm php8.5-sqlite3 php8.5-gd php8.5-mbstring php8.5-intl unzip certbot python3-certbot-nginx
 # Start Nginx
 systemctl enable nginx
 
