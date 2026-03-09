@@ -3,15 +3,6 @@ read -p 'Please tell me the full domain name (e.g. grocy.example.com) you want t
 read -p 'Grocy currency - ISO 4217 code (hit Return for default: USD): ' currency
 currency=${currency:-USD}
 
-# Add PHP repository for getting 8.X
-add-apt-repository -y ppa:ondrej/php
-# Update
-apt-get update && apt-get -y upgrade
-# Install everything we'll need for Grocy, the webserver & HTTPS
-apt-get install -y nginx sqlite3 php8.3-fpm php8.3-sqlite3 php8.3-gd php8.3-mbstring php8.3-intl unzip certbot python3-certbot-nginx
-# Start Nginx
-systemctl enable nginx
-
 # Install the latest Grocy release
 cd /var/www/html
 wget -q https://releases.grocy.info/latest
